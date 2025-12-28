@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koleksi Produk Kerajinan Tangan dari Kreasi Nusantara">
+    <title>Produk - Kreasi Nusantara</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- NAVIGATION BAR (Sama dengan index.html untuk consistency) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket3 text-primary"></i>
+                Kreasi Nusantara
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="products.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <!-- HCI: Visibility - User langsung tahu mereka di halaman mana -->
+    <section class="page-header py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-3">Koleksi Produk Kami</h1>
+                    <p class="lead text-muted mb-0">
+                        Jelajahi berbagai produk kerajinan tangan berkualitas dari pengrajin lokal
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <!-- Breadcrumb untuk navigasi context -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Produk</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER SECTION (Optional - untuk pengalaman yang lebih baik) -->
+    <!-- HCI: Filtering mengurangi cognitive load user -->
+    <section class="py-4 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0 text-muted">
+                        <strong id="productCount">9 Produk</strong> ditemukan
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Filter dropdown menggunakan Bootstrap Select -->
+                    <div class="d-flex justify-content-md-end gap-2">
+                        <select class="form-select form-select-sm w-auto" id="categoryFilter" aria-label="Filter kategori">
+                            <option value="all" selected>Semua Kategori</option>
+                            <option value="tas">Tas & Dompet</option>
+                            <option value="dekorasi">Dekorasi Rumah</option>
+                            <option value="aksesoris">Aksesoris</option>
+                        </select>
+                        
+                        <select class="form-select form-select-sm w-auto" id="sortFilter" aria-label="Urutkan produk">
+                            <option value="newest" selected>Terbaru</option>
+                            <option value="price-low">Harga: Rendah ke Tinggi</option>
+                            <option value="price-high">Harga: Tinggi ke Rendah</option>
+                            <option value="popular">Terpopuler</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <!-- HCI: Gestalt Proximity & Similarity - Grid konsisten untuk scanability -->
+    <!-- Bootstrap: Responsive grid 3 kolom desktop, 2 tablet, 1 mobile -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4" id="productsGrid">
+                
+                <!-- Product Card 1 -->
+                <div class="col-sm-6 col-lg-4" data-category="tas">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <!-- Image dengan lazy loading untuk performance -->
+                        <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Tas Rajut Bohemian" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <!-- Category badge untuk context -->
+                            <span class="badge bg-secondary mb-2 w-fit">Tas & Dompet</span>
+                            <h3 class="h5 card-title">Tas Rajut Bohemian</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Tas rajut dengan motif etnik yang cocok untuk gaya kasual Anda. 
+                                Terbuat dari benang berkualitas tinggi.
+                            </p>
+                            <!-- Price dengan visual hierarchy -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 125.000</span>
+                                <span class="badge bg-success">Best Seller</span>
+                            </div>
+                            <!-- CTA dengan Affordance jelas -->
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Tas%20Rajut%20Bohemian" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Tas Rajut Bohemian via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-sm-6 col-lg-4" data-category="dekorasi">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Keranjang Rotan Natural" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Dekorasi Rumah</span>
+                            <h3 class="h5 card-title">Keranjang Rotan Natural</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Keranjang serbaguna dari rotan asli untuk penyimpanan rumah. 
+                                Ramah lingkungan dan tahan lama.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 85.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Keranjang%20Rotan%20Natural" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Keranjang Rotan Natural via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-sm-6 col-lg-4" data-category="aksesoris">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Gantungan Kunci Batik" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Aksesoris</span>
+                            <h3 class="h5 card-title">Gantungan Kunci Batik</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Souvenir cantik dengan motif batik khas Indonesia. 
+                                Cocok untuk kado atau koleksi pribadi.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 15.000</span>
+                                <span class="badge bg-info">New</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Gantungan%20Kunci%20Batik" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Gantungan Kunci Batik via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-sm-6 col-lg-4" data-category="tas">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1564422170194-896b89110ef8?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Dompet Kulit Handmade" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Tas & Dompet</span>
+                            <h3 class="h5 card-title">Dompet Kulit Handmade</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Dompet kulit asli dengan jahitan tangan yang rapi. 
+                                Desain minimalis dan fungsional.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 175.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Dompet%20Kulit%20Handmade" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Dompet Kulit Handmade via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="col-sm-6 col-lg-4" data-category="dekorasi">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1615571022219-eb45cf7faa9d?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Lampu Hias Bambu" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Dekorasi Rumah</span>
+                            <h3 class="h5 card-title">Lampu Hias Bambu</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Lampu hias dari bambu yang memberikan pencahayaan hangat. 
+                                Cocok untuk ruang tamu atau kamar.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 225.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Lampu%20Hias%20Bambu" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Lampu Hias Bambu via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="col-sm-6 col-lg-4" data-category="dekorasi">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Bantal Tenun Ikat" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Dekorasi Rumah</span>
+                            <h3 class="h5 card-title">Bantal Tenun Ikat</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Bantal dengan kain tenun ikat tradisional Nusantara. 
+                                Menambah estetika ruangan Anda.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 95.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Bantal%20Tenun%20Ikat" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Bantal Tenun Ikat via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="col-sm-6 col-lg-4" data-category="aksesoris">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343a?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Gelang Manik Etnik" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Aksesoris</span>
+                            <h3 class="h5 card-title">Gelang Manik Etnik</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Gelang dengan manik-manik warna-warni motif etnik. 
+                                Bisa dipakai pria maupun wanita.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 35.000</span>
+                                <span class="badge bg-success">Best Seller</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Gelang%20Manik%20Etnik" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Gelang Manik Etnik via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="col-sm-6 col-lg-4" data-category="tas">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1622560480654-d96214fdc887?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Tote Bag Canvas" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Tas & Dompet</span>
+                            <h3 class="h5 card-title">Tote Bag Canvas</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Tas belanja dari canvas dengan sablon desain eksklusif. 
+                                Ramah lingkungan dan kuat.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 65.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Tote%20Bag%20Canvas" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Tote Bag Canvas via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 9 -->
+                <div class="col-sm-6 col-lg-4" data-category="aksesoris">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Kalung Kayu Ukir" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-secondary mb-2 w-fit">Aksesoris</span>
+                            <h3 class="h5 card-title">Kalung Kayu Ukir</h3>
+                            <p class="card-text text-muted flex-grow-1 small">
+                                Kalung dari kayu dengan ukiran tangan yang detail. 
+                                Unik dan artistik.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 55.000</span>
+                                <span class="badge bg-info">New</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Kalung%20Kayu%20Ukir" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Pesan Kalung Kayu Ukir via WhatsApp">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <!-- HCI: Clear call to action untuk konversi -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-3">Tidak Menemukan yang Anda Cari?</h2>
+            <p class="lead mb-4">
+                Hubungi kami untuk custom order atau pertanyaan produk
+            </p>
+            <a href="contact.html" class="btn btn-light btn-lg px-5">
+                <i class="bi bi-chat-dots me-2"></i>
+                Hubungi Kami
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER (Sama dengan index.html) -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-basket3 me-2"></i>
+                        Kreasi Nusantara
+                    </h5>
+                    <p class="text-white-50">
+                        Toko kerajinan tangan lokal yang menghadirkan produk berkualitas 
+                        dari pengrajin Indonesia.
+                    </p>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Link Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-white-50 text-decoration-none hover-link">Beranda</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="products.html" class="text-white-50 text-decoration-none hover-link">Produk</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" class="text-white-50 text-decoration-none hover-link">Tentang Kami</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" class="text-white-50 text-decoration-none hover-link">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5 class="mb-3">Hubungi Kami</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Jl. Kerajinan No. 123, Malang
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            +62 812-3456-7890
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-envelope me-2"></i>
+                            info@kreasinus.com
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-white-50">
+            <div class="text-center text-white-50">
+                <small>&copy; 2024 Kreasi Nusantara. Dibuat dengan ❤️ untuk UMKM Indonesia.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

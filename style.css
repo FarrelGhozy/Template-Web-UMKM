@@ -1,0 +1,579 @@
+/* ========================================
+   KREASI NUSANTARA - CUSTOM CSS
+   HCI-Optimized Styles for Bootstrap 5
+   ======================================== */
+
+/* ========================================
+   1. CUSTOM CSS VARIABLES (Override Bootstrap)
+   HCI: Consistent color scheme across website
+   ======================================== */
+:root {
+    /* Primary Colors - 60-30-10 Rule */
+    --bs-primary: #C86F4A;        /* Terracotta - 30% */
+    --bs-primary-rgb: 200, 111, 74;
+    --bs-secondary: #2C1810;      /* Deep Brown - 10% */
+    --bs-secondary-rgb: 44, 24, 16;
+    --bs-light: #F5F1E8;          /* Warm Beige - 60% */
+    --bs-dark: #2C1810;
+    
+    /* Additional Colors */
+    --bs-success: #28a745;
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing (based on Bootstrap's spacing scale) */
+    --section-padding: 5rem;
+    
+    /* Shadow for depth (Gestalt: Figure-Ground) */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    
+    /* Transition for smooth feedback */
+    --transition: all 0.3s ease;
+}
+
+/* ========================================
+   2. GLOBAL STYLES
+   HCI: Base readability and accessibility
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;          /* Minimum untuk mobile readability */
+    line-height: 1.6;         /* Optimal untuk readability */
+    color: var(--bs-secondary);
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* HCI: Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--bs-dark);
+}
+
+h1 { font-size: 2.5rem; }    /* 40px */
+h2 { font-size: 2rem; }      /* 32px */
+h3 { font-size: 1.5rem; }    /* 24px */
+h4 { font-size: 1.25rem; }   /* 20px */
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.35rem; }
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* HCI: Link Affordance */
+a {
+    color: var(--bs-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #a85839;           /* Darker shade for hover */
+    text-decoration: underline;
+}
+
+/* ========================================
+   3. NAVIGATION
+   HCI: Consistency, Visibility, Feedback
+   ======================================== */
+.navbar {
+    padding: 1rem 0;
+    background-color: var(--bs-light) !important;
+}
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--bs-primary) !important;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);   /* Subtle feedback */
+}
+
+/* HCI: Active state visibility */
+.nav-link {
+    font-weight: 500;
+    color: var(--bs-secondary) !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    border-radius: 0.25rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    background-color: rgba(200, 111, 74, 0.1);
+    color: var(--bs-primary) !important;
+}
+
+.nav-link.active {
+    background-color: var(--bs-primary);
+    color: white !important;
+}
+
+/* Hamburger menu - Fitts's Law: Target size 44x44px */
+.navbar-toggler {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--bs-primary);
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(200, 111, 74, 0.25);
+}
+
+/* ========================================
+   4. HERO SECTION
+   HCI: Figure-Ground, High Contrast
+   ======================================== */
+.hero-section {
+    background: linear-gradient(135deg, #C86F4A 0%, #a85839 100%);
+    background-image: url('https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=1600&h=900&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* Parallax effect */
+    padding: 8rem 0 6rem;
+    position: relative;
+}
+
+/* Overlay untuk contrast teks */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 24, 16, 0.7);  /* Dark overlay */
+}
+
+.hero-title {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);  /* Readability enhancement */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Min-height utility untuk hero */
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+/* Animation for hero content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   5. BUTTONS
+   HCI: Affordance, Feedback, Fitts's Law
+   ======================================== */
+.btn {
+    font-weight: 600;
+    text-transform: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;     /* Comfortable padding */
+    min-height: 48px;             /* Touch target size */
+    transition: var(--transition);
+    border: none;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--bs-primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #a85839;
+    transform: translateY(-2px);  /* Lift effect */
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+    transform: translateY(0);     /* Press effect */
+}
+
+/* Outline Button */
+.btn-outline-primary {
+    border: 2px solid var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--bs-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Large Button for CTA */
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    min-height: 56px;            /* Larger touch target */
+}
+
+/* ========================================
+   6. CARDS
+   HCI: Gestalt Principles, Consistency
+   ======================================== */
+.card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: var(--transition);
+    height: 100%;                 /* Equal height cards */
+}
+
+/* Hover effect untuk interactive feedback */
+.card.hover-lift:hover,
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-img-top {
+    aspect-ratio: 4/3;           /* Consistent image ratio */
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.05);      /* Zoom effect */
+}
+
+/* Badge positioning */
+.w-fit {
+    width: fit-content;
+}
+
+/* ========================================
+   7. SECTIONS
+   HCI: Visual Hierarchy, Spacing
+   ======================================== */
+section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--bs-primary);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Page Header */
+.page-header {
+    background-color: var(--bs-light);
+    border-bottom: 2px solid rgba(200, 111, 74, 0.2);
+}
+
+/* ========================================
+   8. FEATURES & VALUE ICONS
+   HCI: Visual Cues, Affordance
+   ======================================== */
+.feature-icon i,
+.value-icon i {
+    font-size: 3rem;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.hover-lift:hover .feature-icon i {
+    transform: scale(1.1) rotate(5deg);  /* Playful hover */
+    color: #a85839;
+}
+
+/* ========================================
+   9. FORMS
+   HCI: Feedback, Error Prevention, Visibility
+   ======================================== */
+.form-control,
+.form-select {
+    border: 2px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* Focus state untuk visibility */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(200, 111, 74, 0.25);
+}
+
+/* Floating labels enhancement */
+.form-floating > label {
+    color: #6c757d;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--bs-primary);
+}
+
+/* Validation feedback - Clear visual cues */
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+/* Invalid/Valid feedback text */
+.invalid-feedback,
+.valid-feedback {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* ========================================
+   10. FOOTER
+   HCI: Consistency, Clear Navigation
+   ======================================== */
+footer {
+    background-color: var(--bs-dark);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer h5 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .hover-link:hover {
+    color: var(--bs-primary) !important;
+    padding-left: 0.5rem;
+    text-decoration: none;
+}
+
+/* ========================================
+   11. UTILITIES
+   HCI: Helper classes for common patterns
+   ======================================== */
+
+/* Shadow utilities */
+.shadow-custom {
+    box-shadow: var(--shadow-md);
+}
+
+/* Icon box for contact cards */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading state (for JavaScript) */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ========================================
+   12. ACCESSIBILITY ENHANCEMENTS
+   WCAG Compliance
+   ======================================== */
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--bs-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus visible untuk keyboard navigation */
+*:focus-visible {
+    outline: 3px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+
+/* High contrast untuk text */
+.text-muted {
+    color: #6c757d !important;  /* Ensure contrast ratio > 4.5:1 */
+}
+
+/* ========================================
+   13. RESPONSIVE DESIGN
+   Mobile-First Approach
+   ======================================== */
+
+/* Tablet (768px and up) */
+@media (min-width: 768px) {
+    section {
+        padding: 5rem 0;
+    }
+    
+    .hero-section {
+        padding: 10rem 0 8rem;
+    }
+}
+
+/* Desktop (992px and up) */
+@media (min-width: 992px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Mobile optimizations (below 768px) */
+@media (max-width: 767px) {
+    /* Larger touch targets for mobile */
+    .btn {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Stack cards vertically with proper spacing */
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Adjust hero for mobile */
+    .hero-section {
+        padding: 6rem 0 4rem;
+        background-attachment: scroll;  /* Better mobile performance */
+    }
+    
+    /* Mobile navbar spacing */
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem !important;
+        margin: 0.25rem 0;
+    }
+}
+
+/* ========================================
+   14. PRINT STYLES (Bonus)
+   ======================================== */
+@media print {
+    .navbar,
+    .btn,
+    footer {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ========================================
+   15. ANIMATIONS & TRANSITIONS
+   HCI: Smooth feedback and micro-interactions
+   ======================================== */
+
+/* Fade in animation for sections */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Slide up animation */
+.slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation for CTAs */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-primary:focus {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* ========================================
+   16. DARK MODE SUPPORT (Optional Bonus)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    /* Implement if needed for future enhancement */
+}
+
+/* End of Custom CSS */
