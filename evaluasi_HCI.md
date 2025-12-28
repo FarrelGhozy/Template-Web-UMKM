@@ -5,9 +5,9 @@
 **Tanggal Evaluasi:** Desember 2025
 
 **Anggota Kelompok:**
-1. **Alan Sutrisno Putra** (NIM: [ISI NIM])
-2. **Farrel Ghozy** (NIM: [ISI NIM])
-3. **Adhiss Sukmo** (NIM: [ISI NIM])
+1. **Alan Sutrisno Putra** (NIM: 452024611030)
+2. **Farrel Ghozy** (NIM: 452024611053)
+3. **Adhiss Sukmo** (NIM: 452024611004)
 
 ---
 
