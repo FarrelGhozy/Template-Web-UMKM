@@ -1,53 +1,439 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamplate Web UMKM</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta name="description" content="Kreasi Nusantara - Toko Kerajinan Tangan Lokal dengan Produk Berkualitas">
+    <title>Kreasi Nusantara - Beranda</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+    
+    <!-- NAVIGATION BAR -->
+    <!-- HCI Principle: Hick's Law - Membatasi menu hanya 4 item untuk mengurangi waktu keputusan -->
+    <!-- Bootstrap Component: Navbar dengan responsive hamburger menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <!-- Brand dengan typography hierarki -->
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-basket3 text-primary"></i>
+                Kreasi Nusantara
+            </a>
+            
+            <!-- Hamburger button untuk mobile - Target sentuh 44x44px (Fitts's Law) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu alignment untuk desktop -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Active state untuk visibility (user tahu posisi mereka) -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
-   <script src="assets/css/js/bootstrap.bundle.min.js"></script>
-   <script src="./js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-</body>
-</html>         
+
+    <!-- HERO SECTION -->
+    <!-- HCI: Figure-ground principle dengan overlay untuk kontras teks -->
+    <!-- Bootstrap: Jumbotron style dengan utility classes -->
+    <section class="hero-section position-relative">
+        <!-- Background image dengan overlay gelap untuk readability -->
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="row min-vh-75 align-items-center">
+                <div class="col-lg-8 text-white position-relative">
+                    <!-- Typography hierarchy: H1 untuk hero title -->
+                    <h1 class="display-3 fw-bold mb-4 hero-title">
+                        Kerajinan Tangan <br>Asli Indonesia
+                    </h1>
+                    <p class="lead mb-4">
+                        Temukan keindahan produk handmade lokal yang dibuat dengan cinta dan keterampilan tradisional.
+                        Dukung UMKM Indonesia!
+                    </p>
+                    
+                    <!-- CTA Button: Affordance jelas dengan warna kontras dan ukuran besar (Fitts's Law) -->
+                    <!-- Minimum target size: 48x48px untuk mobile touch -->
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="products.html" class="btn btn-primary btn-lg px-4 py-3">
+                            <i class="bi bi-bag-heart me-2"></i>
+                            Lihat Produk
+                        </a>
+                        <a href="about.html" class="btn btn-outline-light btn-lg px-4 py-3">
+                            Tentang Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN SECTION -->
+    <!-- HCI: Gestalt Proximity - Grouping cards dengan gap konsisten -->
+    <!-- Bootstrap: Grid system dengan responsive columns -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <!-- Section title dengan margin bottom untuk visual separation -->
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-3">Mengapa Memilih Kami?</h2>
+                <p class="text-muted">Komitmen kami terhadap kualitas dan kepuasan pelanggan</p>
+            </div>
+            
+            <!-- Grid dengan 3 kolom di desktop, 1 kolom di mobile (Mobile-first) -->
+            <div class="row g-4">
+                <!-- Card 1: Gestalt Similarity - Semua card memiliki struktur sama -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-hand-thumbs-up text-primary"></i>
+                            </div>
+                            <h3 class="h5 card-title mb-3">100% Handmade</h3>
+                            <p class="card-text text-muted">
+                                Setiap produk dibuat dengan tangan oleh pengrajin berpengalaman, menjamin keunikan dan kualitas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-tree text-primary"></i>
+                            </div>
+                            <h3 class="h5 card-title mb-3">Ramah Lingkungan</h3>
+                            <p class="card-text text-muted">
+                                Menggunakan bahan alami dan proses produksi yang berkelanjutan untuk masa depan bumi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100 hover-lift">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon mb-3">
+                                <i class="bi bi-truck text-primary"></i>
+                            </div>
+                            <h3 class="h5 card-title mb-3">Pengiriman Cepat</h3>
+                            <p class="card-text text-muted">
+                                Proses pengiriman aman dan cepat ke seluruh Indonesia melalui jasa ekspedisi terpercaya.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK UNGGULAN SECTION -->
+    <!-- HCI: Consistency - Struktur card sama dengan halaman produk -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-3">Produk Unggulan</h2>
+                <p class="text-muted">Koleksi terbaik pilihan pelanggan kami</p>
+            </div>
+            
+            <!-- Product Grid: 3 kolom desktop, 2 kolom tablet, 1 kolom mobile -->
+            <div class="row g-4 mb-4">
+                <!-- Product Card 1 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <!-- Image dengan aspect ratio konsisten -->
+                        <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Tas Rajut Bohemian" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 card-title">Tas Rajut Bohemian</h3>
+                            <p class="card-text text-muted flex-grow-1">
+                                Tas rajut dengan motif etnik yang cocok untuk gaya kasual Anda.
+                            </p>
+                            <!-- Price dengan emphasis -->
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 125.000</span>
+                                <span class="badge bg-success">Best Seller</span>
+                            </div>
+                            <!-- CTA: Affordance dengan icon WhatsApp (familiar mental model) -->
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Tas%20Rajut%20Bohemian" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Keranjang Rotan Natural" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 card-title">Keranjang Rotan Natural</h3>
+                            <p class="card-text text-muted flex-grow-1">
+                                Keranjang serbaguna dari rotan asli untuk penyimpanan rumah.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 85.000</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Keranjang%20Rotan%20Natural" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card product-card border-0 shadow-sm h-100">
+                        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&h=300&fit=crop" 
+                             class="card-img-top" 
+                             alt="Gantungan Kunci Batik" 
+                             loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 card-title">Gantungan Kunci Batik</h3>
+                            <p class="card-text text-muted flex-grow-1">
+                                Souvenir cantik dengan motif batik khas Indonesia.
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="h5 text-primary mb-0">Rp 15.000</span>
+                                <span class="badge bg-info">New</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Gantungan%20Kunci%20Batik" 
+                               class="btn btn-primary w-100" 
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="bi bi-whatsapp me-2"></i>
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Link ke halaman produk lengkap -->
+            <div class="text-center">
+                <a href="products.html" class="btn btn-outline-primary btn-lg">
+                    Lihat Semua Produk
+                    <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <!-- HCI: Social proof untuk membangun trust -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title mb-3">Kata Pelanggan Kami</h2>
+                <p class="text-muted">Kepuasan pelanggan adalah prioritas kami</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Testimonial Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text mb-3">
+                                "Kualitas produknya luar biasa! Tas rajutnya sangat bagus dan awet. 
+                                Pengiriman juga cepat. Pasti order lagi!"
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="bi bi-person-circle text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Dewi Lestari</h6>
+                                    <small class="text-muted">Surabaya</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text mb-3">
+                                "Senang bisa dukung UMKM lokal! Produknya unik dan berkualitas. 
+                                Cocok banget buat kado."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="bi bi-person-circle text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Budi Santoso</h6>
+                                    <small class="text-muted">Malang</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text mb-3">
+                                "Pelayanannya ramah dan responsif. Produknya juga sesuai foto. 
+                                Highly recommended!"
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar me-3">
+                                    <i class="bi bi-person-circle text-primary" style="font-size: 2.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Sari Wulandari</h6>
+                                    <small class="text-muted">Jakarta</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- HCI: Consistency - Footer muncul di semua halaman -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-md-4">
+                    <h5 class="mb-3">
+                        <i class="bi bi-basket3 me-2"></i>
+                        Kreasi Nusantara
+                    </h5>
+                    <p class="text-white-50">
+                        Toko kerajinan tangan lokal yang menghadirkan produk berkualitas 
+                        dari pengrajin Indonesia.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5 class="mb-3">Link Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-white-50 text-decoration-none hover-link">Beranda</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="products.html" class="text-white-50 text-decoration-none hover-link">Produk</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="about.html" class="text-white-50 text-decoration-none hover-link">Tentang Kami</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="contact.html" class="text-white-50 text-decoration-none hover-link">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div class="col-md-4">
+                    <h5 class="mb-3">Hubungi Kami</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Jl. Kerajinan No. 123, Malang
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>
+                            +62 812-3456-7890
+                        </li>
+                        <li class="mb-3">
+                            <i class="bi bi-envelope me-2"></i>
+                            info@kreasinus.com
+                        </li>
+                    </ul>
+                    
+                    <!-- Social Media Icons - Target size 44x44px -->
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="WhatsApp">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <hr class="my-4 bg-white-50">
+            <div class="text-center text-white-50">
+                <small>&copy; 2024 Kreasi Nusantara. Dibuat dengan ❤️ untuk UMKM Indonesia.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
