@@ -1,0 +1,11 @@
+/* Dropdown hover khusus desktop */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+/*untuk navbar warnanya*/
+.style-nav{
+    background-color:#FF4800
+}
